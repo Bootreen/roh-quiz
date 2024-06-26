@@ -1,4 +1,4 @@
-export const PageHome = () => (
+export const PageHome = ({ handler }) => (
   <>
     <h2>ROH Quiz</h2>
     <h3>Welcome! </h3>
@@ -9,6 +9,6 @@ export const PageHome = () => (
       you are already a coding pro or whether you still have a lot to learn...
       Have fun!
     </p>
-    <button onClick={onSwitchPage}>Next</button>
+    <button onClick={handler}>Next</button>
   </>
 );
