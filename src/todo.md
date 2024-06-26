@@ -27,5 +27,6 @@
 
 1. Convert questions.md to js-object format [Henning]
 2. Write page state management and page switching in App.jsx [Oleksii]
-3. Write at least one page component (Home Page)
-4. Write css-template for page component that will be used as base for othe page styles
+3. Write component for Home Page [Henning]
+4. Write component for Quiz Page [Oleksii]
+5. Write css-template for page component that will be used as base for othe page styles
