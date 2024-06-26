@@ -1,19 +1,21 @@
 import "./App.css";
 import { useState } from "react";
+import { PageHome } from "./components/PageHome";
+import { PageQuiz } from "./components/PageQuiz";
+import { PageAdv } from "./components/PageAdv";
+import { PageResult } from "./components/PageResult";
 
 const App = () => {
-  const [currPage, setCurrPage] = useState("Quiz");
+  const [currPage, setCurrPage] = useState(1);
+  const onSwitchPage = () => setCurrPage(currPage === 4 ? 1 : currPage + 1);
   return (
     <>
-      <h1>ROH Quiz</h1>
-      {/* {currPage === "Homepage" && <PageHome />}
-      {currPage === "Quiz" && <PageQuiz />}
-      {currPage === "Advertising" && <PageAdv />}
-      {currPage === "Result" && <PageResult />} */}
-      {currPage === "Homepage" && <div>111</div>}
-      {currPage === "Quiz" && <div>222</div>}
-      {currPage === "Advertising" && <div>333</div>}
-      {currPage === "Result" && <div>444</div>}
+      {currPage === 1 && <PageHome />}
+      {currPage === 2 && <PageQuiz />}
+      {currPage === 3 && <PageAdv />}
+      {currPage === 4 && <PageResult />}
+      {/* Temporary button for testing page switching */}
+      <button onClick={onSwitchPage}>Next page</button>
     </>
   );
 };
