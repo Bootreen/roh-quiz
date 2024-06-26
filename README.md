@@ -1,6 +1,8 @@
 # Quiz App
 
-by ROH Team (Rainer, Oleksii, Henning)
+![ROH Team](./public/roh.jpg)
+
+(Rainer, Oleksii, Henning)
 
 [Current build]()
 
