@@ -8,13 +8,14 @@ import { PageResult } from "./components/PageResult";
 
 const App = () => {
   const [currPage, setCurrPage] = useState(HOME);
-  const onSwitchPage = (pageId) => setCurrPage(pageId);
   return (
     <>
-      {currPage === HOME && <PageHome handler={() => onSwitchPage(QUIZ)} />}
-      {currPage === QUIZ && <PageQuiz handler={() => onSwitchPage(ADV)} />}
-      {currPage === ADV && <PageAdv handler={() => onSwitchPage(RESULT)} />}
-      {currPage === RESULT && <PageResult handler={() => onSwitchPage(HOME)} />}
+      {currPage === HOME && <PageHome navHandler={() => setCurrPage(QUIZ)} />}
+      {currPage === QUIZ && <PageQuiz navHandler={() => setCurrPage(ADV)} />}
+      {currPage === ADV && <PageAdv navHandler={() => setCurrPage(RESULT)} />}
+      {currPage === RESULT && (
+        <PageResult navHandler={() => setCurrPage(HOME)} />
+      )}
     </>
   );
 };

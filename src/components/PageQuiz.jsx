@@ -5,7 +5,7 @@ import { quizQuestions } from "../data/questions";
 export const PageQuiz = () => {
   const [currQuestion, setCurrQuestion] = useState(0);
   const { question, options } = quizQuestions[currQuestion];
-  const onSwitchQuestion = () =>
+  const switchQuestion = () =>
     setCurrQuestion(
       currQuestion === quizQuestions.length - 1 ? 0 : currQuestion + 1
     );
@@ -19,7 +19,7 @@ export const PageQuiz = () => {
           <button key={id}>{option}</button>
         ))}
       </div>
-      <button onClick={onSwitchQuestion}>Next Question</button>
+      <button onClick={switchQuestion}>Next Question</button>
     </>
   );
 };
