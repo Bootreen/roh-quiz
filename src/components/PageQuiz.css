@@ -1,0 +1,4 @@
+.answers-container {
+  display: flex;
+  flex-direction: column;
+}
