@@ -4,8 +4,8 @@ import { quizQuestions } from "../data/questions";
 
 export const PageQuiz = () => {
   const [currQuestion, setCurrQuestion] = useState(0);
-  const { question, answers } = quizQuestions[currQuestion];
-  const onSwitchQuestion = () =>
+  const { question, options } = quizQuestions[currQuestion];
+  const switchQuestion = () =>
     setCurrQuestion(
       currQuestion === quizQuestions.length - 1 ? 0 : currQuestion + 1
     );
@@ -14,12 +14,12 @@ export const PageQuiz = () => {
     <>
       <h2>Question {currQuestion + 1}</h2>
       <h3>{question}</h3>
-      <div className='answers-container'>
-        {answers.map((answer, id) => (
-          <button key={id}>{answer}</button>
+      <div className='options-container'>
+        {options.map((option, id) => (
+          <button key={id}>{option}</button>
         ))}
       </div>
-      <button onClick={onSwitchQuestion}>Next Question</button>
+      <button onClick={switchQuestion}>Next Question</button>
     </>
   );
 };
