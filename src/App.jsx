@@ -10,14 +10,10 @@ const App = () => {
   const onSwitchPage = (pageId) => setCurrPage(pageId);
   return (
     <>
-      {currPage === 1 && <PageHome handler={onSwitchPage} />}
-      {currPage === 2 && <PageQuiz />}
-      {currPage === 3 && <PageAdv />}
-      {currPage === 4 && <PageResult />}
-      {/* Temporary button for testing page switching */}
-      <button onClick={() => onSwitchPage(currPage === 4 ? 1 : currPage + 1)}>
-        Next page
-      </button>
+      {currPage === 1 && <PageHome handler={() => onSwitchPage(2)} />}
+      {currPage === 2 && <PageQuiz handler={() => onSwitchPage(3)} />}
+      {currPage === 3 && <PageAdv handler={() => onSwitchPage(4)} />}
+      {currPage === 4 && <PageResult handler={() => onSwitchPage(1)} />}
     </>
   );
 };
