@@ -1,11 +1,12 @@
-const ProgressBar = (props) => {
-  const { bgcolor, completed } = props;
+import { quizQuestions } from "../data/questions";
+
+export const ProgressBar = ({ currQuestion }) => {
   return (
-    <div>
+    <>
       <div>
-        <span>{`${completed}%`}</span>
+        {currQuestion + 1} of {quizQuestions.length}
       </div>
-    </div>
+    </>
   );
 };
 
