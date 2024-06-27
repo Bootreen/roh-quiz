@@ -1,6 +1,7 @@
 import "./PageQuiz.css";
 import { useState } from "react";
 import { quizQuestions } from "../data/questions";
+import { ProgressBar } from "./ProgressBar";
 
 export const PageQuiz = () => {
   const [currQuestion, setCurrQuestion] = useState(0);
@@ -12,6 +13,8 @@ export const PageQuiz = () => {
 
   return (
     <>
+      <ProgressBar currQuestion={currQuestion} />
+
       <h2>Question {currQuestion + 1}</h2>
       <h3>{question}</h3>
       <div className="answers-container">
