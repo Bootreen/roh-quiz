@@ -3,4 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  /* prevent users from copy-pasting questions and options
+  to google the right answer*/
+  user-select: none;
 }
