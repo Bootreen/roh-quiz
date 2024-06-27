@@ -59,12 +59,6 @@ export const PageQuiz = ({
       <ProgressBar currQuestion={currQuestion} />
       <h2>Question {currQuestion + 1}</h2>
       <h3>{question}</h3>
-      <div className="answers-container">
-        {answers.map((answer, id) => (
-          <button key={id}>{answer}</button>
-      <h2>Correct answers: {correctAnswers}</h2>
-      <h2>Question {currQuestion + 1}</h2>
-      <h3>{question}</h3>
       <div className='options-container'>
         {shuffled[currQuestion].map((shuffledId, realId) => (
           <button
