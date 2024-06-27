@@ -9,5 +9,3 @@ export const ProgressBar = ({ currQuestion }) => {
     </>
   );
 };
-
-export default ProgressBar;
