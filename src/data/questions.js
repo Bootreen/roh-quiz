@@ -1,37 +1,37 @@
 export const quizQuestions = [
   {
     question: "Wofür steht CSS?",
-    answers: [
+    options: [
+      "Cascading Style Sheets",
       "Computer Style Sheets",
       "Creative Style Sheets",
-      "Cascading Style Sheets",
       "Colored Style Sheets",
     ],
   },
   {
     question: "Welche CSS Syntax ist korrekt?",
-    answers: [
+    options: [
+      "body {color: black;}",
       "{body: color=black;}",
       "{body; color: black;}",
-      "body {color: black;}",
       "body: color=black;",
     ],
   },
   {
     question: 'Wie selektiert man ein Element mit id="demo"?',
-    answers: ["#demo", ".demo", "demo", "*demo"],
+    options: ["#demo", ".demo", "demo", "*demo"],
   },
   {
     question: "Wie selektiert man alle p Elemente in einem div?",
-    answers: ["div + p", "div p", "div p.all", "div.p"],
+    options: ["div p", "div + p", "div p.all", "div.p"],
   },
   {
     question: "Was ist der Defaultwert für position?",
-    answers: ["relative", "fixed", "absolute", "static"],
+    options: ["static", "relative", "fixed", "absolute"],
   },
   {
     question: "Wie deklariert man eine Funktion in JavaScript?",
-    answers: [
+    options: [
       "function myFunction()",
       "function:myFunction()",
       "function=myFunction()",
@@ -40,10 +40,10 @@ export const quizQuestions = [
   },
   {
     question: "Wie ruft man eine Funktion in JavaScript auf?",
-    answers: [
+    options: [
+      "myFunction()",
       "call myFunction()",
       "myFunction.call()",
-      "myFunction()",
       "() => { myFunction() }",
     ],
   },

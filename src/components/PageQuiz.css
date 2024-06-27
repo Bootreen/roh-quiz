@@ -1,6 +1,14 @@
-.answers-container {
+.options-container {
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
   margin-bottom: 3rem;
+}
+
+.correct {
+  background-color: PaleGreen;
+}
+
+.wrong {
+  background-color: Pink;
 }

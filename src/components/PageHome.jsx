@@ -1,4 +1,4 @@
-export const PageHome = ({ handler }) => (
+export const PageHome = ({ navHandler }) => (
   <>
     <h2>ROH Quiz</h2>
     <h3>Welcome! </h3>
@@ -9,6 +9,6 @@ export const PageHome = ({ handler }) => (
       you are already a coding pro or whether you still have a lot to learn...
       Have fun!
     </p>
-    <button onClick={handler}>Next</button>
+    <button onClick={navHandler}>Start Quiz</button>
   </>
 );
