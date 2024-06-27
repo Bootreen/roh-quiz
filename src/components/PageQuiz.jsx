@@ -1,60 +1,81 @@
 import "./PageQuiz.css";
 import { useState } from "react";
+import { clsx } from "clsx";
 import { quizQuestions } from "../data/questions";
-// import { shuffle } from "../utils/shuffle";
 
 export const PageQuiz = ({
-  navHandler,
-  answersHandler,
-  correctAnswers,
-  shuffled,
+  navHandler, //      handler for switching to the next App page
+  answersHandler, //  handler to sum up the correct answers
+  correctAnswers, //  correct answers counter
+  shuffled, //        array of shuffled options indexes
 }) => {
+  // Current question counter (starting from the very first one)
   const [currQuestion, setCurrQuestion] = useState(0);
+  // Destructuring question and its options (unshuffled)
   const { question, options } = quizQuestions[currQuestion];
-  const switchQuestion = () =>
-    setCurrQuestion(
-      currQuestion === quizQuestions.length - 1 ? 0 : currQuestion + 1
-    );
 
-  // Completed
-  // 1. Make a copy of options array
-  // 2. Shuffle the copy
-  // 3. Render shuffled copy to the screen
-  // 4. During render conditionally assign onClick event handler to options buttons
-  // 5. For the right answer onClick has to call answersHandler and increment correctAnswers
-  // 6. For the wrong answer onClick has to do nothing (for now)
+  const [isAnswered, setIsAnswered] = useState(false);
+  const [wrongAnswerId, setWrongAnswerId] = useState(false);
+  const [correctHighlighted, setCorrectHighlighted] = useState("");
+  const [wrongHighlighted, setWrongHighlighted] = useState("");
 
-  // 8. Prevent additional options shuffle after the answer
+  const [pageControlLabel, setPageControlLabel] = useState("Next Question");
 
-  // ToDo
-  // 7. Prohibit multiply answers for the same question
-  //    7.1 - Introduce new state - isAnswered
-  //    7.2 - When isAnswered, make options buttons disabled and highlight right answer by green color
-  //    7.3 - When isAnswered AND wrong option was selected, additioonaly highlight wrong answer by red
-  //    7.4 - Next Question button has to be disabled if NOT isAnswered
+  const isCorrect = (shuffledId) =>
+    options[shuffledId] === options[0] ? true : false;
+
+  const switchQuestion = () => {
+    setIsAnswered(false);
+    setWrongAnswerId(false);
+    setCorrectHighlighted("");
+    setWrongHighlighted("");
+    // Preparing to go to the next App page
+    if (currQuestion === quizQuestions.length - 2)
+      setPageControlLabel("To Result");
+    // If user answered all the questions, take him further
+    if (currQuestion === quizQuestions.length - 1) {
+      navHandler();
+    } else {
+      // else - just increment Current Question counter
+      setCurrQuestion(currQuestion + 1);
+    }
+  };
+
+  const processAnswer = (shuffledId, realId) => {
+    setIsAnswered(true);
+    if (isCorrect(shuffledId)) {
+      answersHandler(correctAnswers + 1);
+    } else {
+      // highlight wrong answer only if wrong answer was selected
+      setWrongAnswerId(realId);
+    }
+    setCorrectHighlighted("correct");
+    setWrongHighlighted("wrong");
+  };
 
   return (
     <>
-      <h1>Correct answers: {correctAnswers}</h1>
+      <h2>Correct answers: {correctAnswers}</h2>
       <h2>Question {currQuestion + 1}</h2>
       <h3>{question}</h3>
       <div className='options-container'>
-        {shuffled[currQuestion].map((id) => (
+        {shuffled[currQuestion].map((shuffledId, realId) => (
           <button
-            key={id}
-            onClick={
-              options[id] === options[0]
-                ? () => {
-                    answersHandler(correctAnswers + 1);
-                  }
-                : () => {}
-            }
+            key={realId}
+            className={clsx(
+              isCorrect(shuffledId) && correctHighlighted,
+              wrongAnswerId === realId && wrongHighlighted
+            )}
+            onClick={() => processAnswer(shuffledId, realId)}
+            disabled={isAnswered}
           >
-            {options[id]}
+            {options[shuffledId]}
           </button>
         ))}
       </div>
-      <button onClick={switchQuestion}>Next Question</button>
+      <button onClick={switchQuestion} disabled={!isAnswered}>
+        {pageControlLabel}
+      </button>
     </>
   );
 };

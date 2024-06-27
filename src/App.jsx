@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { HOME, QUIZ, ADV, RESULT } from "./data/pages";
+import { quizQuestions } from "./data/questions";
 import { shuffle } from "./utils/shuffle";
 import { PageHome } from "./components/PageHome";
 import { PageQuiz } from "./components/PageQuiz";
@@ -13,7 +14,7 @@ const App = () => {
   const [shuffled, setShuffled] = useState();
 
   useEffect(() => {
-    setShuffled(shuffle(7));
+    setShuffled(shuffle(quizQuestions.length));
   }, []);
 
   return (
