@@ -2,6 +2,7 @@ import "./PageQuiz.css";
 import { useState } from "react";
 import { clsx } from "clsx";
 import { quizQuestions } from "../data/questions";
+import { ProgressBar } from "./ProgressBar";
 
 export const PageQuiz = ({
   navHandler, //      handler for switching to the next App page
@@ -55,7 +56,7 @@ export const PageQuiz = ({
 
   return (
     <>
-      <h2>Correct answers: {correctAnswers}</h2>
+      <ProgressBar currQuestion={currQuestion} />
       <h2>Question {currQuestion + 1}</h2>
       <h3>{question}</h3>
       <div className='options-container'>
