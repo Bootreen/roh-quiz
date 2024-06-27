@@ -14,7 +14,7 @@ export const PageQuiz = () => {
     <>
       <h2>Question {currQuestion + 1}</h2>
       <h3>{question}</h3>
-      <div className='answers-container'>
+      <div className="answers-container">
         {answers.map((answer, id) => (
           <button key={id}>{answer}</button>
         ))}
