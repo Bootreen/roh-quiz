@@ -32,6 +32,7 @@ const App = () => {
       {currPage === RESULT && (
         <PageResult
           navHandler={() => setCurrPage(HOME)}
+          answersHandler={setCorrectAnswers}
           correctAnswers={correctAnswers}
         />
       )}
