@@ -46,7 +46,7 @@ export const PageQuiz = ({
 
   // Determines if selected answer option was correct
   // by comparing this option id with correct id that is always 0
-  const isCorrect = (originalId) => (originalId === 0 ? true : false);
+  const isCorrect = (shuffledId) => (shuffledId === 0 ? true : false);
 
   // Boolean variable that signals if the current question is the last one
   const isLastQuestion = currQuestionId === quizQuestions.length - 1;
@@ -143,7 +143,7 @@ export const PageQuiz = ({
           </button>
         ))}
       </div>
-      {/* call switchQuestion handler if NExt button was clicked */}
+      {/* call switchQuestion handler if Next button was clicked */}
       {/* disable Next button if user didn't answer the question */}
       <button onClick={switchQuestion} disabled={!isAnswered}>
         {/* if this is the last question, change Next button caption to "To Result" */}
