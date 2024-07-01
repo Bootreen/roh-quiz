@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { HOME, QUIZ, ADV, RESULT } from "./data/pages";
 import { quizQuestions } from "./data/questions";
 import { shuffle } from "./utils/shuffle";
@@ -11,11 +11,7 @@ import { PageResult } from "./components/PageResult";
 const App = () => {
   const [currPage, setCurrPage] = useState(HOME);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [shuffled, setShuffled] = useState();
-
-  useEffect(() => {
-    setShuffled(shuffle(quizQuestions.length));
-  }, []);
+  const [shuffled] = useState(shuffle(quizQuestions.length));
 
   return (
     <>
@@ -32,6 +28,7 @@ const App = () => {
       {currPage === RESULT && (
         <PageResult
           navHandler={() => setCurrPage(HOME)}
+          answersHandler={setCorrectAnswers}
           correctAnswers={correctAnswers}
         />
       )}

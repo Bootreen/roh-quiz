@@ -4,10 +4,10 @@
 
 (Rainer, Oleksii, Henning)
 
-[Current build]()
+[Current build](https://roh-quiz.vercel.app/)
 
 ### Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- The order of answers for each new quiz session is shuffled
+- Once the user selects an option, the correct and incorrect answers are highlighted.
+- An incorrect answer is only highlighted if it has been selected
