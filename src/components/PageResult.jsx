@@ -31,7 +31,7 @@ export const PageResult = ({ navHandler, correctAnswers, answersHandler }) => {
 
       <img src={resultImages[correctAnswers]} alt="Ergebnis-GIF" />
       <br />
-      <button class="button-56" onClick={restartHandler}>
+      <button className="button-56" onClick={restartHandler}>
         Homepage
       </button>
     </>
