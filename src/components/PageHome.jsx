@@ -9,6 +9,7 @@ export const PageHome = ({ navHandler }) => (
       you are already a coding pro or whether you still have a lot to learn...
       Have fun!
     </p>
+    
     <button onClick={navHandler}>Start Quiz</button>
   </>
 );
