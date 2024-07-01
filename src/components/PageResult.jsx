@@ -20,6 +20,7 @@ export const PageResult = ({ navHandler, correctAnswers, answersHandler }) => {
       <h2>ROH Quiz</h2>
       <h3>Your result</h3>
       <div>
+        {correctAnswers === 0 && <p>You answered 0 questions correctly.</p>}
         {correctAnswers === 1 && <p>You answered 1 question correctly.</p>}
         {correctAnswers > 1 && correctAnswers <= 7 && (
           <p>You answered {correctAnswers} questions correctly.</p>
