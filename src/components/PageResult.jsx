@@ -1,3 +1,5 @@
+import "./PageResult.css";
+
 export const PageResult = ({ navHandler, correctAnswers, answersHandler }) => {
   const restartHandler = () => {
     answersHandler(0);
@@ -22,14 +24,20 @@ export const PageResult = ({ navHandler, correctAnswers, answersHandler }) => {
       <div>
         {correctAnswers === 0 && <p>You answered 0 questions correctly.</p>}
         {correctAnswers === 1 && <p>You answered 1 question correctly.</p>}
-        {correctAnswers > 1 && correctAnswers <= 7 && (
+        {correctAnswers > 1 && (
           <p>You answered {correctAnswers} questions correctly.</p>
         )}
       </div>
 
       <img src={resultImages[correctAnswers]} alt="Ergebnis-GIF" />
       <br />
-      <button onClick={restartHandler}>Homepage</button>
+      <button class="button-56" onClick={restartHandler}>
+        Homepage
+      </button>
     </>
   );
 };
+
+{
+  /* <button class="button-56" role="button">Button 56</button> */
+}
