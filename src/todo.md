@@ -29,7 +29,6 @@
 2. Write page state management and page switching in App.jsx [Oleksii] (Completed)
 3. Write component for Home Page [Henning] (Completed)
 4. Write component for Quiz Page [Oleksii] (Completed)
-5. Write css-template for page component that will be used as base for othe page styles
 
 ### 27.06
 
@@ -52,11 +51,14 @@
 
 ### 28.06
 
-1. The correctAnswers counter does not reset to zero when navigating from the results page to the home page. We need to solve this problem. [Henning]
+1. The correctAnswers counter does not reset to zero when navigating from the results page to the home page. We need to solve this problem. [Henning] (Completed)
    - tip: we can pass the setCorrectAnswers handler (see code of PageQuiz call in App.jsx) as prop to the PageResult
-2. We need proper visualisation for the prosgress bar. [Henning] [Rainer]
+
+### 01.07
+
+1. We need proper visualisation for the prosgress bar. [Henning] [Rainer]
    - tip: we can use flexbox with 7 elements with backgrounds that change it colors
-3. We need an awesome Result Page. I've prepared 6 funny gifs to illustrate the user final result, the task is - to add a conditional render of this images depending on the result. [Rainer]
+2. We need an awesome Result Page. I've prepared 6 funny gifs to illustrate the user final result, the task is - to add a conditional render of this images depending on the result. [Rainer] [Henning]
 
 | Correct answers | File name          | Image                                           |
 | :-------------- | :----------------- | :---------------------------------------------- |
@@ -66,3 +68,5 @@
 | 3-4             | not-bad.gif        | ![not-bad](../public/not-bad.gif)               |
 | 1-2             | dissapointment.gif | ![dissapointment](../public/dissapointment.gif) |
 | 0               | zero.gif           | ![zero](../public/zero.gif)                     |
+
+3. Write css-template for page component that will be used as base for othe page styles [Oleksii]
