@@ -96,7 +96,9 @@ export const PageQuiz = ({
       {/* Calling children component ProgressBar and passing currQuestion as prop to it */}
       <ProgressBar currQuestion={currQuestionId} />
       {/* Render current question text */}
-      <h3>{question}</h3>
+      <div className='question-container'>
+        <h3>{question}</h3>
+      </div>
       <div className='options-container'>
         {/* render 4 answer options */}
         {/* Use shuffled property as source for mapping the options */}
