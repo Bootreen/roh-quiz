@@ -1,10 +1,19 @@
-import "./PageResult.css";
-
 export const PageResult = ({ navHandler, correctAnswers, answersHandler }) => {
   const restartHandler = () => {
     answersHandler(0);
     navHandler();
   };
+
+  const results = [
+    "Time to debug! 🐞\nEvery great coder has been here – chin up!",
+    "HTML Newbie! 🌱\nKeep learning!",
+    "HTML Newbie! 🌱\nKeep learning!",
+    "CSS Apprentice! 🎨\nPractice time!",
+    "CSS Apprentice! 🎨\nPractice time!",
+    "JS Juggler! 🤹\nKeep going!",
+    "Code Rockstar! 🎸\nAlmost flawless!",
+    "Frontend Wizard! 🧙\nYou nailed it!",
+  ];
 
   const resultImages = [
     "/zero.gif",
@@ -19,21 +28,21 @@ export const PageResult = ({ navHandler, correctAnswers, answersHandler }) => {
 
   return (
     <>
-      <h2>ROH Quiz</h2>
-      <h3>Your result</h3>
-      <div>
-        {correctAnswers === 0 && <p>You answered 0 questions correctly.</p>}
-        {correctAnswers === 1 && <p>You answered 1 question correctly.</p>}
-        {correctAnswers > 1 && (
-          <p>You answered {correctAnswers} questions correctly.</p>
-        )}
-      </div>
-
-      <img src={resultImages[correctAnswers]} alt="Ergebnis-GIF" />
-      <br />
-      <button className="button-56" onClick={restartHandler}>
-        Homepage
-      </button>
+      <h2>Quiz Result</h2>
+      <p className='result'>
+        You answered {correctAnswers} questions correctly.
+      </p>
+      {results[correctAnswers].split("\n").map((element, id) => (
+        <p key={id} className='result'>
+          {element}
+        </p>
+      ))}
+      <img
+        className='result-gif'
+        src={resultImages[correctAnswers]}
+        alt='result-GIF'
+      />
+      <button onClick={restartHandler}>Back to Homepage</button>
     </>
   );
 };

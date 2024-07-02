@@ -1,4 +1,3 @@
-import "./ProgressBar.css";
 import { clsx } from "clsx";
 
 import { quizQuestions } from "../data/questions";
@@ -8,17 +7,21 @@ export const ProgressBar = ({ currQuestion }) => {
     for (let i = 0; i < quizQuestions.length; i++)
       content.push(
         <div
-          className={clsx("progress-element", i <= currQuestion && "active")}
+          className={clsx(
+            "progress-element",
+            i <= currQuestion && "element-active",
+            i === currQuestion && "element-last"
+          )}
         ></div>
       );
     return content;
   };
   return (
     <>
-      <div>
+      <div className='progress-indicator'>
         {currQuestion + 1} of {quizQuestions.length}
       </div>
-      <div className="progress-container">{renderProgress()}</div>
+      <div className='progress-bar'>{renderProgress()}</div>
     </>
   );
 };
