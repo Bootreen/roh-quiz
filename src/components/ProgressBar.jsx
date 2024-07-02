@@ -7,6 +7,7 @@ export const ProgressBar = ({ currQuestion }) => {
     for (let i = 0; i < quizQuestions.length; i++)
       content.push(
         <div
+          key={i}
           className={clsx(
             "progress-element",
             i <= currQuestion && "element-active",
