@@ -56,12 +56,12 @@ li {
   /* overlap with progress bar */
   position: absolute;
   width: 18rem;
-  margin-top: 0.25rem;
+  margin-top: 2.25rem;
   text-align: center;
 }
 
 .progress-bar {
-  margin: 0 auto;
+  margin: 2rem auto 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   place-content: center;
@@ -119,13 +119,32 @@ li {
 }
 
 /* Styling for PageResult component */
+.result-container {
+  padding: 0;
+}
+
+.result-container h3 {
+  line-height: 0.6rem;
+}
+
+.result-container li {
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+}
+
+.result-container button {
+  margin: 1rem 0;
+}
+
 .result-gif {
   width: 16rem;
   height: auto;
   border-radius: 1rem;
-  margin: 1rem auto 1.8rem;
+  margin: 0.5rem auto 0.5rem;
 }
 
 .result {
   font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 0.8rem;
 }

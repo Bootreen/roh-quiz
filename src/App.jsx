@@ -10,7 +10,7 @@ import { PageResult } from "./components/PageResult";
 
 const App = () => {
   const [currPage, setCurrPage] = useState(HOME);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [answers, setAnswers] = useState([]);
   const [shuffled] = useState(shuffle(quizQuestions.length));
 
   return (
@@ -19,8 +19,8 @@ const App = () => {
       {currPage === QUIZ && (
         <PageQuiz
           navHandler={() => setCurrPage(ADV)}
-          answersHandler={setCorrectAnswers}
-          correctAnswers={correctAnswers}
+          answers={answers}
+          setAnswers={setAnswers}
           shuffled={shuffled}
         />
       )}
@@ -28,8 +28,8 @@ const App = () => {
       {currPage === RESULT && (
         <PageResult
           navHandler={() => setCurrPage(HOME)}
-          answersHandler={setCorrectAnswers}
-          correctAnswers={correctAnswers}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       )}
     </>

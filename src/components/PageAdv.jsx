@@ -18,7 +18,14 @@ export const PageAdv = ({ navHandler }) => (
       action='https://talents.taktsoft.com/bewerbung?bootcamp=0'
     >
       <button type='submit'>Learn more</button>
-      <button onClick={navHandler}>Skip Ad</button>
+      <button
+        onClick={(event) => {
+          event.preventDefault();
+          navHandler();
+        }}
+      >
+        Skip Ad
+      </button>
     </form>
   </>
 );
