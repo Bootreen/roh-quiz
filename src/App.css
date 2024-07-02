@@ -123,10 +123,14 @@ li {
   margin: 1rem 0;
 }
 
-.answers-log {
-  font-weight: 1rem;
-  line-height: 1.1rem;
-  text-align: left;
+.answer-correct {
+  font-weight: 800;
+  color: green;
+}
+
+.answer-wrong {
+  font-weight: 800;
+  color: red;
 }
 
 .result-gif {
