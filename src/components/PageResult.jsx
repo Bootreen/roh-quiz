@@ -1,5 +1,3 @@
-import "./PageResult.css";
-
 export const PageResult = ({ navHandler, correctAnswers, answersHandler }) => {
   const restartHandler = () => {
     answersHandler(0);

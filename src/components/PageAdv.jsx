@@ -1,5 +1,3 @@
-import "./PageAdv.css";
-
 export const PageAdv = ({ navHandler }) => (
   <>
     <a href='https://talents.taktsoft.com/bewerbung?bootcamp=0' target='_blank'>

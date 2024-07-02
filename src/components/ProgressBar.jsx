@@ -1,4 +1,3 @@
-import "./ProgressBar.css";
 import { clsx } from "clsx";
 
 import { quizQuestions } from "../data/questions";

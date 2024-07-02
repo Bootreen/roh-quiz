@@ -1,4 +1,3 @@
-import "./PageQuiz.css";
 import { useState } from "react";
 import { clsx } from "clsx";
 import { quizQuestions } from "../data/questions";
