@@ -35,10 +35,11 @@ html {
 body {
   margin: 5dvh auto;
   min-height: 42rem;
-  max-width: 20rem;
+  max-width: 23rem;
   background: white;
   border: 5px outset grey;
   border-radius: 0.6rem;
+  padding-top: 2rem;
 }
 
 h1 {
