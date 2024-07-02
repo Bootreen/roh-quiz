@@ -10,7 +10,10 @@ import { PageResult } from "./components/PageResult";
 
 const App = () => {
   const [currPage, setCurrPage] = useState(HOME);
+  // array of all given answers - correct and wrong
   const [answers, setAnswers] = useState([]);
+  // array of shuffled option indexes
+  // (reshuffles on the app start)
   const [shuffled] = useState(shuffle(quizQuestions.length));
 
   return (

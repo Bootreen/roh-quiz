@@ -5,8 +5,8 @@ import { ProgressBar } from "./ProgressBar";
 
 export const PageQuiz = ({
   navHandler, //      handler for switching to the next App page
-  answers, //  correct answers counter
-  setAnswers, //  handler to sum up the correct answers
+  answers, //         correct answers counter
+  setAnswers, //      handler to sum up the correct answers
   shuffled, //        array of shuffled options indexes
 }) => {
   // Current question counter (starting from the very first one)
@@ -79,11 +79,12 @@ export const PageQuiz = ({
     setIsAnswered(true);
     // if answer given was correct...
     if (isCorrect(shuffledId)) {
-      // increment correctAnswers counter
+      // insert correct answer boolean into array of answers
       setAnswers([...answers, true]);
     } else {
-      // remember wrong answer current (shuffled) id
+      // insert wrong answer boolean into array of answers
       setAnswers([...answers, false]);
+      // remember wrong answer current (shuffled) id
       setSelectedWrongOptionId(realId);
     }
   };

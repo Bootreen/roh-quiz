@@ -36,12 +36,15 @@ export const PageResult = ({ navHandler, answers, setAnswers }) => {
   return (
     <div className='result-container'>
       <h2>Quiz Result</h2>
-      <h3>Answers:</h3>
-      <ol>
+      <h3>Your answers:</h3>
+      <p className='answers-log'>
         {answers.map((answer, i) => (
-          <li key={i}>{answer ? "Correct" : "Incorrect"}</li>
+          <span key={i}>
+            {i + 1}-{answer ? "correct" : "incorrect"}
+            {i === 6 ? ". " : ", "}
+          </span>
         ))}
-      </ol>
+      </p>
       <p>
         You answered {correctAnswers} of {quizQuestions.length} question(s)
         correctly.
