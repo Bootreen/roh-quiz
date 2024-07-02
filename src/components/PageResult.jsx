@@ -48,7 +48,7 @@ export const PageResult = ({ navHandler, answers, setAnswers }) => {
         <strong>
           {correctAnswers} of {quizQuestions.length}
         </strong>{" "}
-        answers is correct.
+        answers {correctAnswers === 1 ? "is" : "are"} correct.
       </p>
       {results[correctAnswers].split("\n").map((element, id) => (
         <p key={id} className='result'>
