@@ -5,8 +5,8 @@ import { ProgressBar } from "./ProgressBar";
 
 export const PageQuiz = ({
   navHandler, //      handler for switching to the next App page
-  answers, //         correct answers counter
-  setAnswers, //      handler to sum up the correct answers
+  answers, //         array to log a history for all session answer options
+  setAnswers, //      handler to add the last answer option to the answers array
   shuffled, //        array of shuffled options indexes
 }) => {
   // Current question counter (starting from the very first one)
