@@ -1,6 +1,12 @@
 import { quizQuestions } from "../data/questions";
+import { shuffle } from "../utils/shuffle";
 
-export const PageResult = ({ navHandler, answers, setAnswers }) => {
+export const PageResult = ({
+  navHandler,
+  answers,
+  setAnswers,
+  setShuffled,
+}) => {
   const results = [
     "Time to debug! 🐞\nEvery great coder has been here – chin up!",
     "HTML Newbie! 🌱\nKeep learning!",
@@ -23,13 +29,18 @@ export const PageResult = ({ navHandler, answers, setAnswers }) => {
     "/excited.gif",
   ];
 
+  // calculate total correct answers number
   const correctAnswers = answers.reduce(
     (acc, answer) => acc + (answer ? 1 : 0),
     0
   );
 
   const restartHandler = () => {
+    // reset answers array
     setAnswers([]);
+    // reshuffle answer options
+    setShuffled(shuffle(quizQuestions.length));
+    // back to the PageHome
     navHandler();
   };
 
@@ -50,6 +61,7 @@ export const PageResult = ({ navHandler, answers, setAnswers }) => {
         </strong>{" "}
         answers {correctAnswers === 1 ? "is" : "are"} correct.
       </p>
+      {/* split description to 2 separate paragraphs */}
       {results[correctAnswers].split("\n").map((element, id) => (
         <p key={id} className='result'>
           {element}
